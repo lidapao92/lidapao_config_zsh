@@ -84,5 +84,5 @@ if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
     fi
 fi
 
-rm ~/.zcompdump*
+rm -rf ~/.zcompdump*
 env zsh -l
