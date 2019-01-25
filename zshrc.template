@@ -7,13 +7,13 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   git                                   # git补全与别名
   gitignore
-  Z                                     # z 跳转
-  zsh-autosuggestions
-  zsh-completions
+  z                                     # z 跳转
   zsh_reload
   extract
   history-substring-search              # 历史扩展
   colored-man-pages                     # man page扩展
+  zsh-autosuggestions                   # 命令提示
+  zsh-completions                       # 命令补全
   zsh-syntax-highlighting               # 命令高亮
 )
 
@@ -26,11 +26,5 @@ alias cp="cp -i"
 alias zshconfig="vim ~/.zshrc"
 alias ps="ps aux"
 alias mv="mv -iv"
-
-# git
-alias gg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue) <%an>%Creset' --abbrev-commit"
-alias gga="gg --all"
-alias ggs="gg --stat"
-alias ggp="gg -p"
 
 source $ZSH/oh-my-zsh.sh

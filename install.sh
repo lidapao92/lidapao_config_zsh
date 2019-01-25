@@ -4,7 +4,8 @@ set -e
 CONFIG_DIR=$(cd `dirname $0`; pwd)
 ZSH=~/.oh-my-zsh
 ZSH_CONFIG=~/.zshrc
-ZSH_THEMES=$ZSH/themes
+ZSH_CUSTOM_THEMES=$ZSH/custom/themes
+ZSH_CUSTOM_PLUGINS=$ZSH/custom/plugins
 
 FZF=~/.fzf
 
@@ -13,6 +14,7 @@ if ! command -v zsh >/dev/null 2>&1; then
     exit
 fi
 
+printf "Begin install oh-my-zsh...\n"
 if ! [ -d "$ZSH" ]; then
     env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
         printf "Error: git clone of oh-my-zsh repo failed\n"
@@ -20,6 +22,34 @@ if ! [ -d "$ZSH" ]; then
     }
 else
     printf "$ZSH existed\n"
+fi
+
+printf "Install oh-my-zsh plugins...\n"
+if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion"" ]; then
+    env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion" || {
+        printf "Error: git clone of zsh-autosuggestion repo failed\n"
+        exit 1
+    }
+else
+    printf "zsh-autosuggestion existed\n"
+fi
+
+if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-completions" ]; then
+    env git clone --depth=1 https://github.com/zsh-users/zsh-completions.git "$ZSH_CUSTOM_PLUGINS/zsh-completions" || {
+        printf "Error: git clone of zsh-completions repo failed\n"
+        exit 1
+    }
+else
+    printf "zsh-completions existed\n"
+fi
+
+if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" ]; then
+    env git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" || {
+        printf "Error: git clone of zsh-syntax-highlighting repo failed\n"
+        exit 1
+    }
+else
+    printf "zsh-syntax-highlighting existed\n"
 fi
 
 printf "Looking for an existing zsh config...\n"
@@ -30,7 +60,7 @@ fi
 
 # write theme
 printf "Writeing lidapao theme...\n"
-cat << EOF > $ZSH_THEMES/lidapao.zsh-theme
+cat << EOF > $ZSH_CUSTOM_THEMES/lidapao.zsh-theme
 local ret_status="%(?:%{\$fg_bold[green]%}➜ :%{\$fg_bold[red]%}➜ )"
 PROMPT='%{\$fg[cyan]%}%n@%m \${ret_status} %{\$fg[cyan]%}%c%{\$reset_color%} \$(git_prompt_info)'
 
