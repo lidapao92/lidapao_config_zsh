@@ -24,14 +24,14 @@ else
     printf "$ZSH existed\n"
 fi
 
-printf "Install oh-my-zsh plugins...\n"
+printf "Install oh-my-zsh plugins...\n";
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion"" ]; then
     env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion" || {
         printf "Error: git clone of zsh-autosuggestion repo failed\n"
         exit 1
     }
 else
-    printf "zsh-autosuggestion existed\n"
+    printf "zsh-autosuggestion existed\n";
 fi
 
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-completions" ]; then
@@ -40,7 +40,7 @@ if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-completions" ]; then
         exit 1
     }
 else
-    printf "zsh-completions existed\n"
+    printf "zsh-completions existed\n";
 fi
 
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" ]; then
@@ -49,7 +49,7 @@ if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" ]; then
         exit 1
     }
 else
-    printf "zsh-syntax-highlighting existed\n"
+    printf "zsh-syntax-highlighting existed\n";
 fi
 
 printf "Looking for an existing zsh config...\n"
@@ -59,7 +59,7 @@ if [ -f $ZSH_CONFIG ] || [ -h $ZSH_CONFIG ]; then
 fi
 
 # write theme
-printf "Writeing lidapao theme...\n"
+printf "Writeing lidapao theme...\n";
 cat << EOF > $ZSH_CUSTOM_THEMES/lidapao.zsh-theme
 local ret_status="%(?:%{\$fg_bold[green]%}➜ :%{\$fg_bold[red]%}➜ )"
 PROMPT='%{\$fg[cyan]%}%n@%m \${ret_status} %{\$fg[cyan]%}%c%{\$reset_color%} \$(git_prompt_info)'
