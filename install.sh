@@ -26,7 +26,7 @@ fi
 
 printf "Install oh-my-zsh plugins...\n";
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion" ]; then
-    env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestion" || {
+    env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestions" || {
         printf "Error: git clone of zsh-autosuggestion repo failed\n"
         exit 1
     }

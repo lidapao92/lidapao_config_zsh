@@ -21,7 +21,6 @@ plugins=(
 alias tailf="tail -f"
 alias ll="ls -l"
 alias l="ls -lah"
-alias ip="ifconfig | grep '192'"
 alias cp="cp -i"
 alias zshconfig="vim ~/.zshrc"
 alias ps="ps aux"
