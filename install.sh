@@ -10,8 +10,7 @@ ZSH_CUSTOM_PLUGINS=$ZSH/custom/plugins
 FZF=~/.fzf
 
 if ! command -v zsh >/dev/null 2>&1; then
-    printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
-    exit
+    yum install -y zsh
 fi
 
 printf "Begin install oh-my-zsh...\n"
