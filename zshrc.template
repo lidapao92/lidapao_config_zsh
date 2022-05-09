@@ -10,7 +10,7 @@ plugins=(
   git                                   # git补全与别名
   gitignore
   z                                     # z 跳转
-  zsh_reload
+  # zsh_reload
   extract
   history-substring-search              # 历史扩展
   colored-man-pages                     # man page扩展
