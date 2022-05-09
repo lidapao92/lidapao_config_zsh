@@ -15,7 +15,7 @@ fi
 
 printf "Begin install oh-my-zsh...\n"
 if ! [ -d "$ZSH" ]; then
-    env git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$ZSH" || {
+    env git clone --depth=1 https://github.com.cnpmjs.org/ohmyzsh/ohmyzsh.git "$ZSH" || {
         printf "Error: git clone of oh-my-zsh repo failed\n"
         exit 1
     }
@@ -25,7 +25,7 @@ fi
 
 printf "Install oh-my-zsh plugins...\n";
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestions" ]; then
-    env git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestions" || {
+    env git clone --depth=1 https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM_PLUGINS/zsh-autosuggestions" || {
         printf "Error: git clone of zsh-autosuggestion repo failed\n"
         exit 1
     }
@@ -34,7 +34,7 @@ else
 fi
 
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-completions" ]; then
-    env git clone --depth=1 https://github.com/zsh-users/zsh-completions.git "$ZSH_CUSTOM_PLUGINS/zsh-completions" || {
+    env git clone --depth=1 https://github.com.cnpmjs.org/zsh-users/zsh-completions.git "$ZSH_CUSTOM_PLUGINS/zsh-completions" || {
         printf "Error: git clone of zsh-completions repo failed\n"
         exit 1
     }
@@ -43,7 +43,7 @@ else
 fi
 
 if ! [ -d "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" ]; then
-    env git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" || {
+    env git clone --depth=1 https://github.com.cnpmjs.org/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting" || {
         printf "Error: git clone of zsh-syntax-highlighting repo failed\n"
         exit 1
     }
@@ -71,7 +71,7 @@ EOF
 
 printf "Create zshrc...\n"
 cat << EOF > $ZSH_CONFIG
-$(curl -fsSL https://raw.githubusercontent.com/lidapao92/lidapao_config_zsh/master/zshrc.template)
+$(curl -fsSL https://raw.staticdn.net/lidapao92/lidapao_config_zsh/master/zshrc.template)
 EOF
 
 sed -i "/^export ZSH=/ c\
@@ -90,7 +90,7 @@ echo "source $HOME/.zsh_profile" >> ~/.zshrc
 # install fzf
 printf "install fzf...\n"
 if ! [ -d "$FZF" ]; then
-    env git clone --depth=1 https://github.com/junegunn/fzf.git "$FZF" || {
+    env git clone --depth=1 https://github.com.cnpmjs.org/junegunn/fzf.git "$FZF" || {
         printf "Error: git clone of fzf repo failed\n"
         exit 1
     }
