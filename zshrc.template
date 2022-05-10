@@ -17,6 +17,8 @@ plugins=(
   zsh-autosuggestions                   # 命令提示
   zsh-completions                       # 命令补全
   zsh-syntax-highlighting               # 命令高亮
+  docker                                # docker自动完成
+  docker-compose                        # docker-compose自动完成
 )
 
 # alias
