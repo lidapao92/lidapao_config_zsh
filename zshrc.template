@@ -27,7 +27,7 @@ alias ll="ls -l"
 alias l="ls -lah"
 alias cp="cp -i"
 alias zshconfig="vim ~/.zshrc"
-alias ps="ps aux"
+alias psa="ps aux"
 alias mv="mv -iv"
 
 source $ZSH/oh-my-zsh.sh
