@@ -6,5 +6,5 @@
 ## 使用方式
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontentS.com/lidapao92/lidapao_config_zsh/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontents.com/lidapao92/lidapao_config_zsh/master/install.sh)"
 ```
