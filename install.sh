@@ -61,7 +61,7 @@ fi
 printf "Writeing lidapao theme...\n";
 cat << EOF > $ZSH_CUSTOM_THEMES/lidapao.zsh-theme
 local ret_status="%(?:%{\$fg_bold[green]%}➜ :%{\$fg_bold[red]%}➜ )"
-PROMPT='%{\$fg[cyan]%}%n@%m \${ret_status} %{\$fg[cyan]%}%c%{\$reset_color%} \$(git_prompt_info)'
+PROMPT='%{\$fg[cyan]%}%n@%m \${ret_status} %{\$fg[cyan]%}%c%{\$reset_color%} \$(git_prompt_info)%{\$fg_bold[green]%}# '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{\$fg_bold[blue]%}git:(%{\$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{\$reset_color%} "
