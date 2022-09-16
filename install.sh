@@ -13,6 +13,10 @@ if ! command -v zsh >/dev/null 2>&1; then
     yum install -y zsh
 fi
 
+if ! command -v git >/dev/null 2>&1; then
+    yum install -y git
+fi
+
 printf "Begin install oh-my-zsh...\n"
 if ! [ -d "$ZSH" ]; then
     env git clone --depth=1 https://hub.fastgit.xyz/ohmyzsh/ohmyzsh.git "$ZSH" || {
