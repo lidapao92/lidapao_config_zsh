@@ -75,7 +75,7 @@ EOF
 
 printf "Create zshrc...\n"
 cat << EOF > $ZSH_CONFIG
-$(curl -fsSL https://raw.githubusercontents.com/lidapao92/lidapao_config_zsh/master/zshrc.template)
+$(curl -fsSL https://raw.githubusercontent.com/lidapao92/lidapao_config_zsh/master/zshrc.template)
 EOF
 
 sed -i "/^export ZSH=/ c\
